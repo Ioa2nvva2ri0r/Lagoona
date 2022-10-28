@@ -1,0 +1,207 @@
+@font-face {
+  font-family: 'Muller';
+  src: url('../fonts/MullerMedium.woff2') format('woff2'),
+    url('../fonts/MullerMedium.woff') format('woff');
+  font-display: swap;
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Muller';
+  src: url('../fonts/MullerRegular.woff2') format('woff2'),
+    url('../fonts/MullerRegular.woff') format('woff');
+  font-display: swap;
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Muller';
+  src: url('../fonts/MullerBold.woff2') format('woff2'),
+    url('../fonts/MullerBold.woff') format('woff');
+  font-display: swap;
+  font-weight: 800;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Muller';
+  src: url('../fonts/MullerLight.woff2') format('woff2'),
+    url('../fonts/MullerLight.woff') format('woff');
+  font-display: swap;
+  font-weight: 100;
+  font-style: normal;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  position: relative;
+  min-width: 320px;
+  margin: 0 auto;
+  background-color: #f1f1f1;
+  font-family: 'Muller';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 16px;
+  color: #000000;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+input[type='number']::-webkit-inner-spin-button,
+input[type='number']::-webkit-outer-spin-button {
+  opacity: 1;
+}
+
+.container {
+  width: 100%;
+  max-width: 1210px;
+  margin: 0 auto;
+  padding: 0 20px;
+  @media @max565 {
+    padding: 0 8px;
+  }
+}
+
+.us {
+  &-link {
+    display: inline-flex;
+    align-items: center;
+    cursor: pointer;
+    text-decoration: none;
+    color: #cc9933;
+    transition: color 0.4s ease-in-out, transform 0.4s ease-in-out;
+    & svg > path {
+      transition: fill 0.4s ease-in-out, stroke 0.4s ease-in-out;
+    }
+    &:hover,
+    &:focus {
+      outline: none;
+      color: #f9d59c;
+      transform: scale(1.05);
+      transition: color 0.4s ease-in-out, transform 0.4s ease-in-out;
+    }
+    &:active {
+      color: #a47312;
+      transform: scale(1);
+      transition: color 0.4s ease-in-out, transform 0.4s ease-in-out;
+    }
+    &:hover svg > path,
+    &:focus svg > path,
+    &:active svg > path {
+      transition: fill 0.4s ease-in-out, stroke 0.4s ease-in-out;
+    }
+  }
+  &-btn {
+    display: inline-block;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    cursor: pointer;
+    max-width: 215px;
+    border: 1px solid #cc9933;
+    border-radius: 10px;
+    padding: 11px 19px;
+    color: #cc9933;
+    background-color: transparent;
+    transition: border-color 0.4s ease-in-out, color 0.4s ease-in-out,
+      background-color 0.4s ease-in-out;
+    &:hover,
+    &:focus,
+    &:active {
+      outline: none;
+      color: #ffffff;
+      background-color: #cc9933;
+      transition: border-color 0.4s ease-in-out, color 0.4s ease-in-out,
+        background-color 0.4s ease-in-out;
+    }
+    &:active {
+      border-color: #a47312;
+      background-color: #a47312;
+    }
+  }
+  &-title {
+    margin: 0 0 20px 0;
+    padding-left: 40px;
+    font-size: 40px;
+    font-weight: 400;
+    line-height: 40px;
+    color: #333333;
+    @media @max565 {
+      padding-left: 20px;
+      font-size: 25px;
+      line-height: 25px;
+    }
+  }
+}
+
+.btn-scroll {
+  display: none;
+  cursor: pointer;
+  position: fixed;
+  align-items: center;
+  justify-content: space-between;
+  top: 30px;
+  left: 50%;
+  z-index: 19;
+  width: 140px;
+  border: 0;
+  border-radius: 20px;
+  padding: 5px 12px;
+  font-size: 23px;
+  font-weight: 700;
+  background: linear-gradient(#f0bf5f, #efe7e1);
+  color: #fff;
+  box-shadow: 0 3px 3px #c7c4b9;
+  transform: translateX(-50%);
+  transition: color 0.4s ease-in-out;
+  & svg {
+    border-radius: 100%;
+    background-color: #efc77a;
+    transform: rotate(90deg);
+    transition: background-color 0.4s ease-in-out;
+  }
+  & svg > path {
+    stroke: #ffffff;
+    transition: stroke 0.4s ease-in-out;
+  }
+  & svg > circle {
+    transition: stroke 0.4s ease-in-out;
+  }
+  &:hover,
+  &:focus {
+    color: #a47312;
+    transition: color 0.4s ease-in-out;
+  }
+  &:hover svg,
+  &:focus svg {
+    background-color: #a47312;
+    transition: background-color 0.4s ease-in-out;
+  }
+  &:hover svg circle,
+  &:focus svg circle {
+    stroke: #a47312;
+    transition: stroke 0.4s ease-in-out;
+  }
+  &:active {
+    color: #ffb728;
+    transition: color 0.4s ease-in-out;
+  }
+  &:active svg {
+    background-color: #ffb728;
+    transition: background-color 0.4s ease-in-out;
+  }
+  &:active svg circle {
+    stroke: #ffb728;
+    transition: stroke 0.4s ease-in-out;
+  }
+}
